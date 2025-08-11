@@ -20,6 +20,17 @@ public class SwapUtil {
         swapHelper(list, i, j);
     }
 
+    public static void reverse(List<?> list) {
+        reverseHelper(list);
+    }
+
+    private static <T> void reverseHelper(List<T> list){
+        for (int i = 0; i < list.size()/2; i++) {
+            swapHelper(list, i, list.size()-i-1);
+        }
+    }
+
+
     private static <T> void swapHelper(List<T> list, int i, int j) {
         T temp = list.get(i);
         list.set(i, list.get(j));
